@@ -41,7 +41,7 @@ const MovieDetailsPage = () => {
     <main className={css.movie_details_page_container}>
       <button onClick={handleGoBack}>Go back</button>
       <h2>{movie.title}</h2>
-      <div className={css.img_overview_wrapper}>
+      <div className={css.img_info_wrapper}>
         {movie.poster_path && (
           <img
             className={css.movie_img}
@@ -49,7 +49,18 @@ const MovieDetailsPage = () => {
             alt={movie.title}
           />
         )}
-        <p>{movie.overview}</p>
+        <div className={css.info_text}>
+          <p>
+            <strong>Score:</strong> {movie.vote_average} / 10
+          </p>
+          <p>
+            <strong>Genres:</strong>{' '}
+            {movie.genres.map(genre => genre.name).join(', ')}
+          </p>
+          <p>
+            <strong>Overview:</strong> {movie.overview}
+          </p>
+        </div>
       </div>
       <div className={css.movie_info_wrapper}>
         <Link className={css.cast} to={`/movies/${movieId}/cast`}>

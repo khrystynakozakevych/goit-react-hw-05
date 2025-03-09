@@ -22,11 +22,14 @@
   max-width: 270px;
 }
 
-.img_overview_wrapper {
+.img_info_wrapper {
   display: flex;
   gap: 15px;
   margin-bottom: 25px;
   margin-top: 20px;
+}
+
+.info_text {
 }
 
 .movie_info_wrapper {
