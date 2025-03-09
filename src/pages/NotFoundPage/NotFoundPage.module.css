@@ -1,0 +1,14 @@
+.notFoundContainer {
+  text-align: center;
+  padding: 50px;
+}
+
+.goHomeLink {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.goHomeLink:hover {
+  text-decoration: underline;
+}
