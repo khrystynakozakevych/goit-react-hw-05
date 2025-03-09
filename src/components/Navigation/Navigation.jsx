@@ -1,19 +1,19 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import css from './Navigation.module.css';
 
 const Navigation = () => (
   <header className={css.header}>
     <nav>
-      <ul className={css.navList}>
+      <ul className={css.nav_list}>
         <li>
-          <Link to="/" className={css.navItem}>
+          <NavLink to="/" className={css.nav_item}>
             Home
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/movies" className={css.navItem}>
+          <NavLink to="/movies" className={css.nav_item}>
             Movies
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </nav>
