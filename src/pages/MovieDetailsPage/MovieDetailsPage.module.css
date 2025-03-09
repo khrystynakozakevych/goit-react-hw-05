@@ -1,0 +1,45 @@
+.movie_details_page_container {
+  background-color: #415a77;
+  color: #e0e1dd;
+  padding: 10px 20px;
+}
+
+.movie_details_page_container button {
+  padding: 10px;
+  color: #e0e1dd;
+  background-color: #1b263b;
+  transition: all ease-in-out;
+  border-radius: 5px;
+  border: 1px solid #0d1b2a;
+}
+
+.movie_details_page_container button:hover {
+  background-color: #2f4f8b;
+}
+
+.movie_img {
+  width: 30%;
+  max-width: 270px;
+}
+
+.img_overview_wrapper {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  margin-top: 20px;
+}
+
+.movie_info_wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  border-top: 1px solid #0d1b2a;
+  border-bottom: 1px solid #0d1b2a;
+  padding: 20px;
+  font-size: large;
+}
+
+.cast:hover,
+.reviews:hover {
+  color: #1b263b;
+}

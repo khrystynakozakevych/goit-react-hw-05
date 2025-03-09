@@ -25,11 +25,11 @@ const MovieReviews = ({ movieId }) => {
   if (reviews.length === 0) return <p>No reviews available.</p>;
 
   return (
-    <div className={css.reviewsContainer}>
+    <div className={css.reviews_container}>
       <h2>Reviews</h2>
-      <ul className={css.reviewsList}>
+      <ul className={css.reviews_list}>
         {reviews.map(review => (
-          <li key={review.id} className={css.reviewItem}>
+          <li key={review.id} className={css.review_item}>
             <h3>{review.author}</h3>
             <p>{review.content}</p>
           </li>

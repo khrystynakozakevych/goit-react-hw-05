@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { searchMovies } from '../../assets/tmdb-api';
 import MovieList from '../../components/MovieList/MovieList';
+import css from './MoviesPage.module.css';
 
 const MoviesPage = () => {
   const [query, setQuery] = useState('');
@@ -25,9 +26,9 @@ const MoviesPage = () => {
   };
 
   return (
-    <div>
-      <h2>search</h2>
-      <form onSubmit={handleSearch}>
+    <main className={css.movies_page_container}>
+      <h2>Search Movies</h2>
+      <form className={css.search_form} onSubmit={handleSearch}>
         <input
           type="text"
           value={query}
@@ -38,7 +39,7 @@ const MoviesPage = () => {
       </form>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       <MovieList movies={movies} />
-    </div>
+    </main>
   );
 };
 

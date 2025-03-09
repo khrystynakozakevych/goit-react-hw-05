@@ -25,11 +25,11 @@ const MovieCast = ({ movieId }) => {
   if (cast.length === 0) return <p>No cast information available.</p>;
 
   return (
-    <div className={css.castContainer}>
+    <div className={css.cast_container}>
       <h2>Cast</h2>
-      <ul className={css.castList}>
+      <ul className={css.cast_list}>
         {cast.map(actor => (
-          <li key={actor.id} className={css.castItem}>
+          <li key={actor.id} className={css.cast_item}>
             <img
               src={
                 actor.profile_path

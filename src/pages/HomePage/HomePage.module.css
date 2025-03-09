@@ -1,0 +1,9 @@
+.home_page_container {
+  background-color: #415a77;
+  color: #e0e1dd;
+  padding: 10px 20px;
+}
+
+.home_page_container h2 {
+  text-align: center;
+}
