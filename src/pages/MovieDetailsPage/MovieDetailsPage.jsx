@@ -28,7 +28,7 @@ const MovieDetailsPage = () => {
   }, [movieId]);
 
   if (error) return <p style={{ color: 'red' }}>{error}</p>;
-  if (!movie) return <div>Loading...</div>;
+  if (!movie) return <main className={css.loading}>Loading...</main>;
 
   const handleGoBack = () => {
     navigate(-1) || navigate('/movies');
