@@ -1,8 +1,14 @@
-import { useEffect, useState } from 'react';
-import { useParams, useNavigate, Link, useLocation } from 'react-router-dom';
+import { useEffect, useState, useRef } from 'react';
+import {
+  useParams,
+  useNavigate,
+  Link,
+  useLocation,
+  Outlet,
+} from 'react-router-dom';
 import { getMovieDetails } from '../../assets/tmdb-api';
-import MovieCast from '../../components/MovieCast/MovieCast';
-import MovieReviews from '../../components/MovieReviews/MovieReviews';
+// import MovieCast from '../../components/MovieCast/MovieCast';
+// import MovieReviews from '../../components/MovieReviews/MovieReviews';
 import css from './MovieDetailsPage.module.css';
 
 const MovieDetailsPage = () => {
@@ -11,6 +17,8 @@ const MovieDetailsPage = () => {
   const location = useLocation();
   const [movie, setMovie] = useState(null);
   const [error, setError] = useState(null);
+
+  const prevLocationRef = useRef(location.state?.from || '/movies');
 
   useEffect(() => {
     const getMovie = async () => {
@@ -27,17 +35,12 @@ const MovieDetailsPage = () => {
     getMovie();
   }, [movieId]);
 
-  const from = location.state?.from || '/movies';
-
   if (error) return <p style={{ color: 'red' }}>{error}</p>;
   if (!movie) return <main className={css.loading}>Loading...</main>;
 
   const handleGoBack = () => {
-    navigate(from);
+    navigate(prevLocationRef.current);
   };
-
-  const isCastActive = location.pathname.includes('cast');
-  const isReviewsActive = location.pathname.includes('reviews');
 
   return (
     <main className={css.movie_details_page_container}>
@@ -65,15 +68,14 @@ const MovieDetailsPage = () => {
         </div>
       </div>
       <div className={css.movie_info_wrapper}>
-        <Link className={css.cast} to={`/movies/${movieId}/cast`}>
+        <Link className={css.cast} to="cast">
           Cast
         </Link>
-        <Link className={css.reviews} to={`/movies/${movieId}/reviews`}>
+        <Link className={css.reviews} to="reviews">
           Reviews
         </Link>
       </div>
-      {isCastActive && <MovieCast movieId={movieId} />}
-      {isReviewsActive && <MovieReviews movieId={movieId} />}
+      <Outlet />
     </main>
   );
 };
