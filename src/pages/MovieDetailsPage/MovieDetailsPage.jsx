@@ -27,11 +27,13 @@ const MovieDetailsPage = () => {
     getMovie();
   }, [movieId]);
 
+  const from = location.state?.from || '/movies';
+
   if (error) return <p style={{ color: 'red' }}>{error}</p>;
   if (!movie) return <main className={css.loading}>Loading...</main>;
 
   const handleGoBack = () => {
-    navigate(-1) || navigate('/movies');
+    navigate(from);
   };
 
   const isCastActive = location.pathname.includes('cast');
