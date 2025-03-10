@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { getMovieCast } from '../../assets/tmdb-api';
 import css from './MovieCast.module.css';
 
-const MovieCast = ({ movieId }) => {
+const MovieCast = () => {
   const { movieId } = useParams();
   const [cast, setCast] = useState([]);
   const [error, setError] = useState(null);
