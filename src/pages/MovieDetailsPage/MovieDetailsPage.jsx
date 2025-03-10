@@ -7,8 +7,6 @@ import {
   Outlet,
 } from 'react-router-dom';
 import { getMovieDetails } from '../../assets/tmdb-api';
-// import MovieCast from '../../components/MovieCast/MovieCast';
-// import MovieReviews from '../../components/MovieReviews/MovieReviews';
 import css from './MovieDetailsPage.module.css';
 
 const MovieDetailsPage = () => {
