@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { getMovieReviews } from '../../assets/tmdb-api';
 import css from './MovieReviews.module.css';
 
 const MovieReviews = ({ movieId }) => {
+  const { movieId } = useParams();
   const [reviews, setReviews] = useState([]);
   const [error, setError] = useState(null);
 
